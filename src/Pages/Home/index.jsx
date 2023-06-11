@@ -1,10 +1,16 @@
+import About from "components/About";
 import Footer from "components/Footer";
-import Showcase from "components/Showcase";
+import Highlights from "components/Highlight";
+import Showcases from "components/Showcase";
+import Testimonial from "components/Testimonial";
 
 const Home = () => {
     return (
         <>
-            <Showcase />
+            <Showcases />
+            <Highlights />
+            <Testimonial />
+            <About />
             <Footer />
         </>
     );

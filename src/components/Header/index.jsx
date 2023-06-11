@@ -31,9 +31,9 @@ const menus = [
 
 const Header = () => {
     return (
-        <Box as="header" pb={{ base: '12', md: '24' }} py={{ base: '4', lg: '5' }} boxShadow="sm">
-            <Box maxW="5xl" margin="0 auto">
-                <HStack px="16px" spacing="10" justify="space-between" maxW="6xl">
+        <Box as="header" pb={{ base: '12', md: '24' }} py={{ base: '4', lg: '5' }} px="16px">
+            <Box maxW="4xl" margin="0 auto">
+                <HStack spacing="10" justify="space-between" maxW="6xl">
                     <img src={logo} width="190px" />
                     <ButtonGroup variant="text" spacing="0">
                         {

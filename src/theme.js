@@ -9,15 +9,29 @@ const theme = extendTheme({
                 },
             }
         },
+        Button: {
+            variants: {
+                'primary': {
+                    background: "#F4CE14",
+                    color: "#495E57",
+                    _hover: {
+                        background: "#557067",
+                        color: "#F4CE14",
+                    }
+                },
+            }
+        },
     },
     colors: {
         primary: {
             green: "#495E57",
             yellow: "#F4CE14",
+            bg: "#fbfbfb",
         },
         secondary: {
             red: "#EE9972",
             orange: "#FBDABB",
+            bg:"#dcdddd",
         },
         highlight: {
             white: "#EDEFEE",
@@ -51,8 +65,7 @@ const theme = extendTheme({
                 fontFamily: 'Karla',
                 fontWeight: '300',
                 fontSize: '16pt',
-                lineHeight: '1.5',
-                width: '65ch',
+                lineHeight: '1.5'
             },
         },
     },
