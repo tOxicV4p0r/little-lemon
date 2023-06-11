@@ -31,7 +31,7 @@ const theme = extendTheme({
         secondary: {
             red: "#EE9972",
             orange: "#FBDABB",
-            bg:"#dcdddd",
+            bg:"#f6f9f9",
         },
         highlight: {
             white: "#EDEFEE",

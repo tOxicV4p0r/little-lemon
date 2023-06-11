@@ -7,7 +7,7 @@ const About = () => {
     return (
         <Box as="section" py={{ base: '16' }} px="16px">
             <Box maxW="4xl" margin="0 auto">
-                <Flex justifyContent="space-between" my="40px" gap="40px">
+                <Flex justifyContent="space-between" mt="40px" mb="90px" gap="40px">
                     <Box>
                         <Heading variant="primary" color="primary.green" alignItems="center">Little Lemon</Heading>
                         <Heading variant="primary" color="primary.green" size="lg" pb="10px">Chicago</Heading>
