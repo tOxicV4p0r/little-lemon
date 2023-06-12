@@ -19,6 +19,24 @@ const theme = extendTheme({
                         color: "#F4CE14",
                     }
                 },
+                'primaryGhost': {
+                    background: "transparent",
+                    color: "#495E57",
+                    _hover: {
+                        background: "#557067",
+                        color: "#F4CE14",
+                    }
+                },
+                'primaryOutline': {
+                    background: "transparent",
+                    color: "#495E57",
+                    border: "1px solid",
+                    borderColor: "var(--chakra-colors-gray-200)",
+                    _hover: {
+                        background: "#557067",
+                        color: "#F4CE14",
+                    }
+                },
             }
         },
     },
@@ -31,7 +49,7 @@ const theme = extendTheme({
         secondary: {
             red: "#EE9972",
             orange: "#FBDABB",
-            bg:"#f6f9f9",
+            bg: "#f6f9f9",
         },
         highlight: {
             white: "#EDEFEE",

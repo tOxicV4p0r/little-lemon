@@ -21,14 +21,14 @@ const Highlight = () => {
                                         <CardBody bg="primary.bg">
                                             <Box>
                                                 <Flex justifyContent="space-between" alignItems="center" my="16px">
-                                                    <Heading size="md">{e.name}</Heading>
-                                                    <Heading size="sm" color="secondary.red">${e.price}</Heading>
+                                                    <Heading size="lg" variant="primary">{e.name}</Heading>
+                                                    <Heading size="sm" color="primary.yellow">${e.price}</Heading>
                                                 </Flex>
                                                 <Text fontSize="md" color="primary.green">{e.description}</Text>
                                             </Box>
                                         </CardBody>
                                         <CardFooter bg="primary.bg">
-                                            <Button variant="outline" width="100%" color="primary.green">Order a delivery</Button>
+                                            <Button variant="primaryOutline" width="100%" color="primary.green">Order a delivery</Button>
                                         </CardFooter>
                                     </Card>
                                 )

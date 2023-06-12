@@ -1,7 +1,7 @@
 [
     {
         "key": "1",
-        "name": "Greek_Salad",
+        "name": "Greek Salad",
         "price": "12.99",
         "description": "The famous Greek salad of crispy lettuce, peppers, olives, and our Chicago-style feta cheese, garnished with crunchy garlic and rosemary croutons.",
         "picture": "./assets/greek_salad.jpg"

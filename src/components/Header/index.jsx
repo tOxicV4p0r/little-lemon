@@ -1,33 +1,7 @@
 import { Box, Button, ButtonGroup, HStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import data from "./data.json"
 import logo from "assets/Logo.svg"
-
-const menus = [
-    {
-        name: 'Home',
-        url: "/",
-    },
-    {
-        name: 'About',
-        url: "/",
-    },
-    {
-        name: 'Menu',
-        url: "/",
-    },
-    {
-        name: 'Resevations',
-        url: "/",
-    },
-    {
-        name: 'Order Online',
-        url: "/",
-    },
-    {
-        name: 'Login',
-        url: "/",
-    },
-];
 
 const Header = () => {
     return (
@@ -35,9 +9,9 @@ const Header = () => {
             <Box maxW="4xl" margin="0 auto">
                 <HStack spacing="10" justify="space-between" maxW="6xl">
                     <img src={logo} width="190px" />
-                    <ButtonGroup variant="text" spacing="0">
+                    <ButtonGroup variant="primaryGhost" spacing="0">
                         {
-                            menus.map((e) => {
+                            data.map((e) => {
                                 return <Button key={e.name}><Link to={e.url}>{e.name}</Link></Button>
                             })
                         }
