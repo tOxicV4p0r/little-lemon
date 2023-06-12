@@ -1,0 +1,18 @@
+.inputDate {
+    width: 100%;
+    outline: 2px solid trasparent;
+    height: var(--chakra-sizes-10);
+    border-color: inherit;
+    font-size: var(--chakra-fontSizes-md);
+}
+
+.inputDate:focus-visible {
+    z-index: 1;
+    border-color: var(--chakra-colors-blue-500);
+    box-shadow: 0 0 0 1px var(--chakra-colors-blue-500);
+}
+
+.inputRate {
+    font-size: 2rem;
+    color: #F4CE14;
+}

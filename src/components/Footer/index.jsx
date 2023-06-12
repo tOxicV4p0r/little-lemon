@@ -4,7 +4,7 @@ import data from "./data.json"
 
 const Footer = () => {
     return (
-        <Box as="section" py={{ base: '16' }} px="16px" bg="primary.green" >
+        <Box as="footer" py={{ base: '16' }} px="16px" bg="primary.green" >
             <Box maxW="4xl" margin="0 auto">
                 <Flex justifyContent="space-between">
                     <Image src={logo} height="160px" />

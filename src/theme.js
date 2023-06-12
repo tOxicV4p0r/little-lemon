@@ -7,7 +7,10 @@ const theme = extendTheme({
                 'primary': {
                     fontFamily: 'Markazi Text',
                 },
-            }
+                'secondary': {
+                    fontFamily: 'Karla',
+                },
+            },
         },
         Button: {
             variants: {
@@ -17,6 +20,14 @@ const theme = extendTheme({
                     _hover: {
                         background: "#557067",
                         color: "#F4CE14",
+                    }
+                },
+                'primaryReverse': {
+                    background: "#557067",
+                    color: "#F4CE14",
+                    _hover: {
+                        background: "#F4CE14",
+                        color: "#495E57",
                     }
                 },
                 'primaryGhost': {

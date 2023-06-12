@@ -7,7 +7,7 @@ const Showcase = () => {
             <Box maxW="4xl" margin="0 auto">
                 <Grid templateColumns="repeat(2,1fr)">
                     <GridItem>
-                        <Box py="5px">
+                        <Box>
                             <Heading variant="primary" color="primary.yellow" size="2xl">Little Lemon</Heading>
                             <Heading variant="primary" color="highlight.white" size="lg" pb="10px">Chicago</Heading>
                             <Text color="highlight.white" width="35ch" pb="10px">

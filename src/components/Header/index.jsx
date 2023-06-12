@@ -12,7 +12,7 @@ const Header = () => {
                     <ButtonGroup variant="primaryGhost" spacing="0">
                         {
                             data.map((e) => {
-                                return <Button key={e.name}><Link to={e.url}>{e.name}</Link></Button>
+                                return <Link to={e.url} key={e.name}><Button>{e.name}</Button></Link>
                             })
                         }
                     </ButtonGroup>
