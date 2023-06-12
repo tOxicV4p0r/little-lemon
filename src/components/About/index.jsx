@@ -22,7 +22,7 @@ const About = () => {
                     </Box>
                     <Box>
                         <Image src={imgMarioA} rounded="16px" boxShadow='dark-lg' maxW="370px" zIndex="1" mt="120px" ml="-120" position="absolute" />
-                        <Image src={imgMarioB} rounded="16px" maxW="370px" />
+                        <Image src={imgMarioB} rounded="16px" boxShadow='lg' maxW="370px" />
                     </Box>
                 </Flex>
             </Box>
