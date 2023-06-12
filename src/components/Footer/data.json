@@ -4,7 +4,7 @@
         "links": [
             {
                 "name": "Home",
-                "url": ""
+                "url": "/home"
             },
             {
                 "name": "About",
@@ -16,7 +16,7 @@
             },
             {
                 "name": "Resevations",
-                "url": ""
+                "url": "/reservation"
             },
             {
                 "name": "Order Online",

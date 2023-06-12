@@ -1,5 +1,6 @@
 import { Box, Button, ButtonGroup, Flex, Grid, GridItem, HStack, Heading, Image, Text } from "@chakra-ui/react";
 import imageShow from "assets/restauranfood.jpg"
+import { Link } from "react-router-dom";
 
 const Showcase = () => {
     return (
@@ -14,7 +15,7 @@ const Showcase = () => {
                                 We are a family owned Mediterranean restaurant,
                                 focused on traditional recipes served with a modern twist.
                             </Text>
-                            <Button variant="primary">Reserve a Table</Button>
+                            <Link to="/reservation"><Button variant="primary">Reserve a Table</Button></Link>
                         </Box>
                     </GridItem>
                     <GridItem>

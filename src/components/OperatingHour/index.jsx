@@ -1,23 +1,24 @@
-import { Box, Button, ButtonGroup, Divider, Flex, Grid, GridItem, HStack, Heading, Image, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from "@chakra-ui/react";
-import data from "./data.json"
 import { Fragment } from "react";
+import data from "./data.json"
+import { Box, Divider, Grid, GridItem, Text } from "@chakra-ui/react";
+import "./style.css"
 
 const Operation = () => {
     return (
-        <Box maxW="xl" pt="10px">
+        <Box maxW="xl">
             <Divider />
             <Grid templateColumns="0.8fr 1.1fr 1.1fr" gap="4" pt="15px">
-                <GridItem><Text fontSize="md" fontWeight="700" color="primary.green">Day</Text></GridItem>
-                <GridItem><Text fontSize="md" fontWeight="700" color="primary.green" textAlign="end">Lunch</Text></GridItem>
-                <GridItem><Text fontSize="md" fontWeight="700" color="primary.green" textAlign="end">Dinner</Text></GridItem>
+                <GridItem><Text className="timeHeader">Day</Text></GridItem>
+                <GridItem><Text className="timeHeader" textAlign="end">Lunch</Text></GridItem>
+                <GridItem><Text className="timeHeader" textAlign="end">Dinner</Text></GridItem>
                 {
                     data.map((e) => {
                         return (
                             <Fragment key={e.day}>
                                 <GridItem colSpan={3}><Divider /></GridItem>
-                                <GridItem><Text fontSize="md" color="primary.green">{e.day}</Text></GridItem>
-                                <GridItem textAlign="end"><Text fontSize="md" color="primary.green">{e.lunch}</Text></GridItem>
-                                <GridItem textAlign="end"><Text fontSize="md" color="primary.green">{e.dinner}</Text></GridItem>
+                                <GridItem><Text className="timehhmm">{e.day}</Text></GridItem>
+                                <GridItem textAlign="end"><Text className={e.lunch === "Closed" ? "timeClosed" : "timehhmm"} >{e.lunch}</Text></GridItem>
+                                <GridItem textAlign="end"><Text className={e.lunch === "Closed" ? "timeClosed" : "timehhmm"} >{e.dinner}</Text></GridItem>
                             </Fragment>
                         )
                     })

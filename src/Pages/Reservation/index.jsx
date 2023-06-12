@@ -1,11 +1,10 @@
-import { Box, Button, Container, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import ReservForm from "components/ReservForm";
-import imageBg from "assets/restauranfood.jpg"
 import OperatingHour from "components/OperatingHour";
 
 const Reservation = () => {
     return (
-        <Box>
+        <Box pb="30px">
             <Box as="section" py={{ base: '10', lg: '10' }} px="16px" bg="primary.green" >
                 <Flex maxW="4xl" margin="0 auto" justifyContent="space-between">
                     <Box>
@@ -29,13 +28,13 @@ const Reservation = () => {
             <Box as="section" py={{ base: '10', lg: '10' }} px="16px" >
                 <Flex maxW="4xl" margin="0 auto" justifyContent="space-between">
                     <Box w="35%">
-                        <Flex justifyContent="center" pb="10px">
+                        <Flex justifyContent="center" pb="30px">
                             <Heading size="md" variant="secondary" color="primary.green">Operating hours</Heading>
                         </Flex>
                         <OperatingHour />
                     </Box>
                     <Box>
-                        <Flex justifyContent="center" pb="10px">
+                        <Flex justifyContent="center" pb="30px">
                             <Heading size="md" variant="secondary" color="primary.green">Reservation details</Heading>
                         </Flex>
                         <ReservForm />
