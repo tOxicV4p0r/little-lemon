@@ -1,7 +1,6 @@
-import { Box, Button, ButtonGroup, HStack, Image } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
-import data from "./data.json"
+import { Box, HStack, Image } from "@chakra-ui/react";
 import logo from "assets/Logo.svg"
+import Navbar from "components/Navbar";
 
 const Header = () => {
     return (
@@ -9,13 +8,7 @@ const Header = () => {
             <Box as="nav" maxW="4xl" margin="0 auto">
                 <HStack spacing="10" justify="space-between" maxW="6xl">
                     <Image src={logo} width="170px" />
-                    <ButtonGroup variant="primaryGhost" spacing="0">
-                        {
-                            data.map((e) => {
-                                return <Link to={e.url} key={e.name}><Button>{e.name}</Button></Link>
-                            })
-                        }
-                    </ButtonGroup>
+                    <Navbar />
                 </HStack>
             </Box>
         </Box>
