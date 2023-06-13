@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { useReserveContext } from "context/reserveContext";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Select, Stack, Text, Textarea } from "@chakra-ui/react";
+import { Alert, AlertIcon, Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Select, Stack, Text, Textarea, useToast } from "@chakra-ui/react";
 import { DatePicker, Rate } from "antd";
 import dayjs from 'dayjs';
-import { SmileOutlined } from '@ant-design/icons';
+import { SmileOutlined, UserOutlined } from '@ant-design/icons';
 import './styles.css'
 import useSubmit from "hooks/useSubmit";
 
 const defaultTimes = [
-    { "17:00": true },
-    { "18:00": true },
-    { "19:00": true },
-    { "20:00": true },
-    { "21:00": true },
-    { "22:00": true }
+    { time: "17:00", status: true },
+    { time: "18:00", status: true },
+    { time: "19:00", status: true },
+    { time: "20:00", status: true },
+    { time: "21:00", status: true },
+    { time: "22:00", status: true }
 ]
 
 const ReservForm = () => {
@@ -23,7 +23,7 @@ const ReservForm = () => {
     const [antDate, setAntDate] = useState(null);
     const [availableTimes, setAvailableTimes] = useState(defaultTimes)
     const { bookingTimes } = useReserveContext();
-    const { postReserve } = useSubmit()
+    const { postReserve } = useSubmit();
 
     const formik = useFormik({
         initialValues: {
@@ -36,16 +36,14 @@ const ReservForm = () => {
             resComment: ""
         },
         onSubmit: async (values, event) => {
-            console.log(values);
             try {
                 const { resDate, resTime } = values
                 const selectedDate = `${resDate.month()}/${resDate.date()}`;
 
                 // Perform API call using the submit helper from useSubmit hook
-                await postReserve('https://fakeapi.xyz', { date: selectedDate, time: resTime });
-                // onOpen(success);
-
+                await postReserve('https://fakeapi.xyz', { date: selectedDate, time: resTime, message: values });
                 event.resetForm();
+                setAntDate(null);
             } catch (error) {
                 // Handle error
             } finally {
@@ -66,13 +64,13 @@ const ReservForm = () => {
                 let found = false;
                 for (const el of bookingTimes) {
                     if (el.date === selectedDate) {
-                        if (Object.keys(e)[0] === el.time) {
+                        if (e.time === el.time) {
                             found = true;
                             break;
                         }
                     }
                 }
-                return found ? { [Object.keys(e)[0]]: false } : { [Object.keys(e)[0]]: true }
+                return { ...e, status: !found };
             })
             setAvailableTimes(tmpBookingTimes);
         }
@@ -80,7 +78,7 @@ const ReservForm = () => {
 
     useEffect(() => {
         handleTime();
-    }, [antDate, bookingTimes]);
+    }, [antDate]);
 
     const disabledDate = (current) => {
         // Can not select days before today and today
@@ -99,14 +97,14 @@ const ReservForm = () => {
                 <form onSubmit={formik.handleSubmit}>
                     <Stack spacing="5">
                         <FormControl>
-                            <FormLabel htmlFor="resGuestNum" color="primary.green">Number of persons</FormLabel>
+                            <FormLabel color="primary.green">Number of persons</FormLabel>
                             <Flex alignItems="flex-end">
                                 <Rate
                                     id="resGuestNum"
                                     name="resGuestNum"
                                     count={10}
                                     defaultValue={numGuest}
-                                    character={<SmileOutlined />}
+                                    character={<UserOutlined />}
                                     className="inputRate"
                                     onChange={(value) => { setNumGuest(value); formik.setFieldValue("resGuestNum", value); }}
                                     style={{ paddingBottom: '3px', paddingRight: '15px' }}
@@ -125,7 +123,8 @@ const ReservForm = () => {
                                 placeholder="Select date ,time"
                                 className="inputDate"
                                 disabled={formik.isSubmitting}
-                                onChange={(value) => { console.log(value); setAntDate(value); formik.setFieldValue("resDate", value); }}
+                                value={antDate}
+                                onChange={(value) => { setAntDate(value); formik.setFieldValue("resDate", value); }}
                             />
                         </FormControl>
                         <FormControl isInvalid={formik.errors.resTime}>
@@ -138,7 +137,7 @@ const ReservForm = () => {
                                 {...formik.getFieldProps("resTime")}
                             >
                                 {
-                                    availableTimes.map((e) => Object.values(e)[0] ? <option key={Object.keys(e)[0]}>{Object.keys(e)[0]}</option> : <option key={Object.keys(e)[0]} disabled>{Object.keys(e)[0]} booked</option>)
+                                    availableTimes.map((e) => e.status ? <option key={e.time}>{e.time}</option> : <option key={e.time} disabled>{e.time} booked</option>)
                                 }
                             </Select>
                             <FormErrorMessage>{formik.errors.resTime}</FormErrorMessage>
