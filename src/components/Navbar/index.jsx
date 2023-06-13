@@ -4,7 +4,7 @@ import data from "./data.json"
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
-    const isNonMobile = useMediaQuery("(min-width: 1000px)");
+    const isNonMobile = useMediaQuery("(min-width: 992px)");
 
     return (
         <>

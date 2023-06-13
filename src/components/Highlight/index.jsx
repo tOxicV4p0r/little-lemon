@@ -1,22 +1,24 @@
-import { Box, Button, Card, CardBody, CardFooter, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, CardFooter, Flex, Heading, Image, Text, useMediaQuery } from "@chakra-ui/react";
 import data from "./data.json"
 
 const Highlight = () => {
+    const isNonMobile = useMediaQuery("(min-width: 992px)");
+
     return (
         <Box as="section" py={{ base: '16' }} px="16px">
             <Box maxW="4xl" margin="0 auto">
-                <Box my="30px">
+                <Box my={{ base: '0', lg: '30px' }}>
                     <Flex justifyContent="space-between">
                         <Heading variant="primary" color="primary.green">This week special!</Heading>
                         <Button variant="primary">Online Menu</Button>
                     </Flex>
                 </Box>
                 <Box my="40px">
-                    <Flex justifyContent="space-between">
+                    <Box justifyContent="space-between" justifyItems={'center'} display={isNonMobile[0] ? 'flex' : 'grid'} gap="30px">
                         {
                             data.map((e) => {
                                 return (
-                                    <Card maxW="270px" key={e.key}>
+                                    <Card maxW={{ base: "100%", md: "60%", lg: "270px" }} key={e.key}>
                                         <Image src={e.picture} height="270px" fit="cover" borderRadius="5px 5px 0 0" boxShadow='xl' />
                                         <CardBody bg="primary.bg">
                                             <Box>
@@ -34,7 +36,7 @@ const Highlight = () => {
                                 )
                             })
                         }
-                    </Flex>
+                    </Box>
                 </Box>
             </Box>
         </Box>
