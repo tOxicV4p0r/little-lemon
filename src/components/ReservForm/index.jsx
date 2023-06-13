@@ -8,7 +8,9 @@ import { DatePicker, Rate } from "antd";
 import dayjs from 'dayjs';
 import { UserOutlined } from '@ant-design/icons';
 import './styles.css'
+import { fetchAPI } from "services/api";
 
+/*
 const defaultTimes = [
     { time: "17:00", status: true },
     { time: "18:00", status: true },
@@ -17,13 +19,18 @@ const defaultTimes = [
     { time: "21:00", status: true },
     { time: "22:00", status: true }
 ]
+*/
 
 const ReservForm = () => {
     const [numGuest, setNumGuest] = useState(2);
     const [antDate, setAntDate] = useState(null);
-    const [availableTimes, setAvailableTimes] = useState(defaultTimes)
+    const [availableTimes, setAvailableTimes] = useState([])
     const { bookingTimes } = useReserveContext();
     const { postReserve } = useSubmit();
+
+    useEffect(() => {
+        handleTime();
+    }, [antDate]);
 
     const formik = useFormik({
         initialValues: {
@@ -59,26 +66,29 @@ const ReservForm = () => {
 
     const handleTime = () => {
         if (antDate) {
+            const times = fetchAPI(new Date(antDate));
+            const tmp = times.map((e) => { return { time: e, status: true } });
+
             const selectedDate = `${antDate.month()}/${antDate.date()}`;
-            const tmpBookingTimes = availableTimes.map(e => {
+            const tmpBookingTimes = []
+            for (let i = 0; i < tmp.length; i++) {
                 let found = false;
                 for (const el of bookingTimes) {
                     if (el.date === selectedDate) {
-                        if (e.time === el.time) {
+                        if (tmp[i].time === el.time) {
                             found = true;
                             break;
                         }
                     }
                 }
-                return { ...e, status: !found };
-            })
+
+                if (!found)
+                    tmpBookingTimes.push({ ...tmp[i], status: !found })
+            }
+
             setAvailableTimes(tmpBookingTimes);
         }
     }
-
-    useEffect(() => {
-        handleTime();
-    }, [antDate]);
 
     const disabledDate = (current) => {
         // Can not select days before today and today

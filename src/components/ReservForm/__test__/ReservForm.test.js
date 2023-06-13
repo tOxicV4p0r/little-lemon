@@ -1,10 +1,7 @@
-import { fireEvent, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { ReserveProvider } from 'context/reserveContext';
 import ReservForm from '..';
-import userEvent from '@testing-library/user-event';
-import selectEvent from 'react-select-event';
 import dayjs from 'dayjs';
-import { act } from 'react-dom/test-utils';
 
 const MockComp = () => {
     return (

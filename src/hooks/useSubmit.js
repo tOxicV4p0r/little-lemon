@@ -1,5 +1,4 @@
 import { useReserveContext } from "context/reserveContext";
-import { useState } from "react";
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 

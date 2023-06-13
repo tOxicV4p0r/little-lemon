@@ -17,7 +17,7 @@ const Footer = () => {
                                         <Text fontSize="md" fontWeight="700">{e.section}</Text>
                                         {
                                             e.links.map((link, i) => {
-                                                return link.url == "" ?
+                                                return link.url === "" ?
                                                     <Text key={link.name + i} fontSize="md" >{link.name}</Text>
                                                     : <Link key={link.name + i} to={link.url} fontSize="md">{link.name}</Link>
                                             })

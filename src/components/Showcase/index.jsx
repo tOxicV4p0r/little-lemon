@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, Grid, GridItem, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react";
 import imageShow from "assets/restauranfood.jpg"
 import { Link } from "react-router-dom";
 

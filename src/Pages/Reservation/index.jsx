@@ -3,6 +3,7 @@ import ReservForm from "components/ReservForm";
 import OperatingHour from "components/OperatingHour";
 
 const Reservation = () => {
+
     return (
         <Box pb="30px">
             <Box as="section" py={{ base: '10', lg: '10' }} px="16px" bg="primary.green" >

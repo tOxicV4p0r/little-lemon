@@ -1,5 +1,4 @@
-import { StarIcon } from "@chakra-ui/icons";
-import { Avatar, Badge, Box, Button, Card, CardBody, CardFooter, CardHeader, Flex, Grid, GridItem, HStack, Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import imgMarioA from "assets/Mario and Adrian A.jpg"
 import imgMarioB from "assets/Mario and Adrian b.jpg"
 
