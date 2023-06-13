@@ -22,7 +22,7 @@ Start the project with
     npm start
 
 ## **Home**
-![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/home.png?raw=true)
+![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/home_.png?raw=true)
 
 ## **Reservation Page**
 ![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/reservation.png?raw=true)
