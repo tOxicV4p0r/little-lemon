@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { useReserveContext } from "context/reserveContext";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { Alert, AlertIcon, Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Select, Stack, Text, Textarea, useToast } from "@chakra-ui/react";
+import useSubmit from "hooks/useSubmit";
+import { Box, Button, Flex, FormControl, FormErrorMessage, FormLabel, Input, InputGroup, InputLeftAddon, Select, Stack, Text, Textarea } from "@chakra-ui/react";
 import { DatePicker, Rate } from "antd";
 import dayjs from 'dayjs';
-import { SmileOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import './styles.css'
-import useSubmit from "hooks/useSubmit";
 
 const defaultTimes = [
     { time: "17:00", status: true },
@@ -109,7 +109,7 @@ const ReservForm = () => {
                                     onChange={(value) => { setNumGuest(value); formik.setFieldValue("resGuestNum", value); }}
                                     style={{ paddingBottom: '3px', paddingRight: '15px' }}
                                 />
-                                <Box><Text fontSize="3xl" fontWeight="bold">{numGuest}</Text></Box>
+                                <Box><Text role="numberguest" fontSize="3xl" fontWeight="bold">{numGuest}</Text></Box>
                             </Flex>
                         </FormControl>
                         <FormControl>
@@ -147,7 +147,7 @@ const ReservForm = () => {
                             <Select
                                 id="resOccasion"
                                 name="resOccasion"
-                                placeholder="Optional"
+                                placeholder="(Optional)"
                                 disabled={formik.isSubmitting}
                                 {...formik.getFieldProps("resOccasion")}
                             >
@@ -161,6 +161,7 @@ const ReservForm = () => {
                                 id="resGuestName"
                                 name="resGuestName"
                                 type="text"
+                                placeholder="Your name"
                                 disabled={formik.isSubmitting}
                                 {...formik.getFieldProps("resGuestName")}
                             />
@@ -186,7 +187,7 @@ const ReservForm = () => {
                             <Textarea
                                 id="resComment"
                                 name="resComment"
-                                placeholder="Optional"
+                                placeholder="(Optional)"
                                 disabled={formik.isSubmitting}
                                 {...formik.getFieldProps("resComment")}
                             />
