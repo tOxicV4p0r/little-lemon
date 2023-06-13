@@ -25,9 +25,8 @@ export const ReserveProvider = ({ children }) => {
         <ReserveContext.Provider
             value={{
                 ...state,
-                onSuccess: ({ bookingTimes, message }) => { console.log('book'); setState({ ...state, bookingTimes, message, isLoading: false, isOpenDialog: true, }); },
+                onSuccess: ({ bookingTimes, message }) => setState({ ...state, bookingTimes, message, isLoading: false, isOpenDialog: true, }),
                 onFetching: () => setState({ ...state, isLoading: true }),
-                onOpenDialog: ({ message }) => { console.log('open'); setState({ ...state, isOpenDialog: true, message }); },
                 onCloseDialog: () => setState({ ...state, isOpenDialog: false }),
             }}
         >

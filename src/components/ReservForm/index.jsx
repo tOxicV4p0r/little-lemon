@@ -127,7 +127,7 @@ const ReservForm = () => {
                                 onChange={(value) => { setAntDate(value); formik.setFieldValue("resDate", value); }}
                             />
                         </FormControl>
-                        <FormControl isInvalid={formik.errors.resTime}>
+                        <FormControl isInvalid={formik.errors.resTime && formik.touched.resTime}>
                             <FormLabel htmlFor="resTime" color="primary.green">Time</FormLabel>
                             <Select
                                 id="resTime"
@@ -155,7 +155,7 @@ const ReservForm = () => {
                                 <option value="Anniversary">Anniversary</option>
                             </Select>
                         </FormControl>
-                        <FormControl isInvalid={formik.errors.resGuestName}>
+                        <FormControl isInvalid={formik.errors.resGuestName && formik.touched.resGuestName}>
                             <FormLabel htmlFor="resGuestName" color="primary.green">Name</FormLabel>
                             <Input
                                 id="resGuestName"
@@ -166,7 +166,7 @@ const ReservForm = () => {
                             />
                             <FormErrorMessage>{formik.errors.resGuestName}</FormErrorMessage>
                         </FormControl>
-                        <FormControl isInvalid={formik.errors.resPhone}>
+                        <FormControl isInvalid={formik.errors.resPhone && formik.touched.resPhone}>
                             <FormLabel htmlFor="resPhone" color="primary.green">Phone</FormLabel>
                             <InputGroup>
                                 <InputLeftAddon children='+1' />

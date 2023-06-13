@@ -18,8 +18,8 @@ const theme = extendTheme({
                     background: "#F4CE14",
                     color: "#495E57",
                     _hover: {
-                        background: "#557067",
-                        color: "#F4CE14",
+                        background: "#fde56d",
+                        color: "#495E57",
                     }
                 },
                 'primaryReverse': {
