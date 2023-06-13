@@ -5,7 +5,7 @@ This project is part of the **Meta Front-End Developer Capstone** final project 
     Chakra-UI 	- main UI
     Antd		- datepicker
 
-If anyone doesn't understand the instructions in the lesson like me, you can use this project as an example.
+If anyone is struggling to comprehend the instructions in the lesson like me, you can use this project as an example.
 
 > **The more you code, the more you learn.**
 
