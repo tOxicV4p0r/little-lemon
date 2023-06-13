@@ -5,7 +5,6 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
     const isNonMobile = useMediaQuery("(min-width: 1000px)");
-    console.log(isNonMobile);
 
     return (
         <>
@@ -25,7 +24,6 @@ const Navbar = () => {
                             as={IconButton}
                             icon={<HamburgerIcon />}
                             variant='outline'
-                            directio
                         />
                         <MenuList>
                             {
