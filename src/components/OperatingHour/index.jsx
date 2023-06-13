@@ -3,11 +3,11 @@ import data from "./data.json"
 import { Box, Divider, Grid, GridItem, Text } from "@chakra-ui/react";
 import "./style.css"
 
-const Operation = () => {
+const Operation = ({ isNonMobile }) => {
     return (
-        <Box maxW="xl">
+        <Box maxW={isNonMobile ? "xl" : "100%"}>
             <Divider />
-            <Grid templateColumns="0.8fr 1.1fr 1.1fr" gap="4" pt="15px">
+            <Grid templateColumns="0.8fr 1.1fr 1.1fr" gap="4" pt="15px" px={isNonMobile ? "" : "50px"}>
                 <GridItem><Text className="timeHeader">Day</Text></GridItem>
                 <GridItem><Text className="timeHeader" textAlign="end">Lunch</Text></GridItem>
                 <GridItem><Text className="timeHeader" textAlign="end">Dinner</Text></GridItem>

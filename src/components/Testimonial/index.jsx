@@ -1,18 +1,20 @@
-import { Avatar, Box, Card, CardBody, Flex, Heading, Text } from "@chakra-ui/react";
+import { Avatar, Box, Card, CardBody, Flex, Heading, Text, useMediaQuery } from "@chakra-ui/react";
 import Star from "components/Star";
 import data from './data.json'
 
 const Testimonial = () => {
+    const isNonMobile = useMediaQuery(["(min-width: 992px)", "(min-width: 768px)"]);
+
     return (
         <Box as="section" py={{ base: '16' }} px="16px" bg="secondary.bg" >
             <Box maxW="4xl" margin="0 auto">
                 <Box>
                     <Heading variant="primary" color="primary.green" alignItems="center">What our customers say</Heading>
-                    <Flex justifyContent="space-between" my="40px">
+                    <Box justifyContent={isNonMobile[1] ? "space-between" : "center"} display={isNonMobile[1] ? 'flex' : 'grid'} my="40px" gap="30px">
                         {
                             data.map((e) => {
                                 return (
-                                    <Card maxW='200px' key={e.key}>
+                                    <Card maxW={{ base: "100%", md: "200px" }} key={e.key}>
                                         <CardBody>
                                             <Flex spacing='4' mb='4'>
                                                 <Flex flex='1' gap='4' alignItems='center'>
@@ -29,7 +31,7 @@ const Testimonial = () => {
                                 )
                             })
                         }
-                    </Flex>
+                    </Box>
                 </Box>
             </Box>
         </Box>

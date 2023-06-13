@@ -21,7 +21,7 @@ const defaultTimes = [
 ]
 */
 
-const ReservForm = () => {
+const ReservForm = ({ isNonMobile }) => {
     const [numGuest, setNumGuest] = useState(2);
     const [antDate, setAntDate] = useState(null);
     const [availableTimes, setAvailableTimes] = useState([])
@@ -99,11 +99,11 @@ const ReservForm = () => {
     return (
         <Box
             py={{ base: '5', sm: '8' }}
-            px={{ base: '4', sm: '10' }}
+            px={{ base: '5', sm: '10', md: '20' }}
             boxShadow="md"
             borderRadius="xl"
         >
-            <Stack spacing="6" w="md">
+            <Stack spacing="6" w={isNonMobile ? "md" : "sm"}>
                 <form onSubmit={formik.handleSubmit}>
                     <Stack spacing="5">
                         <FormControl>
