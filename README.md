@@ -10,7 +10,7 @@ If anyone doesn't understand the instructions in the lesson like me, you can use
 > **The more you code, the more you learn.**
 
 Completed project website
-[Little Lemon website](https://social-mern-image-nhvl2sce2q-as.a.run.app/)
+[Little Lemon website](https://little-lemon-image-nhvl2sce2q-uc.a.run.app/)
 
 ## **How to install**
 install node packages
@@ -26,6 +26,8 @@ Start the project with
 
 ## **Reservation Page**
 ![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/reservation.png?raw=true)
+
+![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/confirmed.png?raw=true)
 
 ## **Wireframe**
 ![enter image description here](https://github.com/tOxicV4p0r/little-lemon/blob/main/wireframe.png?raw=true)

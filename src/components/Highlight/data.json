@@ -11,7 +11,7 @@
         "name": "Bruschetta",
         "price": "6.99",
         "description": "Our Bruschetta is made from grilled bread that has been spread with garlic and seasoned with salt and olive oil.",
-        "picture": "./assets/bruchetta.svg"
+        "picture": "./assets/bruchetta.jpg"
     },
     {
         "key": "3",
