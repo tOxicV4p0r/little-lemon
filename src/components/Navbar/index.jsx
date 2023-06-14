@@ -1,10 +1,11 @@
 import { Button, ButtonGroup, IconButton, Menu, MenuButton, MenuItem, MenuList, useMediaQuery } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import data from "./data.json"
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 const Navbar = () => {
     const isNonMobile = useMediaQuery("(min-width: 992px)");
+    const navigate = useNavigate();
 
     return (
         <>
@@ -13,7 +14,7 @@ const Navbar = () => {
                     <ButtonGroup variant="primaryGhost" spacing="0">
                         {
                             data.map((e) => {
-                                return <Link to={e.url} key={e.name}><Button>{e.name}</Button></Link>
+                                return <Button key={e.name} isDisabled={e.url === "/"} onClick={() => navigate(e.url)}>{e.name}</Button>
                             })
                         }
                     </ButtonGroup >
@@ -28,7 +29,7 @@ const Navbar = () => {
                         <MenuList>
                             {
                                 data.map((e) => {
-                                    return <Link to={e.url} key={e.name}><MenuItem>{e.name}</MenuItem></Link>
+                                    return <MenuItem key={e.name} isDisabled={e.url === "/"} onClick={() => navigate(e.url)}>{e.name}</MenuItem>
                                 })
                             }
                         </MenuList>
