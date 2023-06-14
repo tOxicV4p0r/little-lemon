@@ -12,7 +12,7 @@ If anyone is struggling to comprehend the instructions in the lesson like me, yo
 > **The more you code, the more you learn.**
 
 Completed project website
-[Little Lemon website](https://little-lemon-image-nhvl2sce2q-uc.a.run.app/)
+[view Little Lemon website](https://little-lemon-image-nhvl2sce2q-uc.a.run.app/)
 
 ## **How to install**
 install node packages
