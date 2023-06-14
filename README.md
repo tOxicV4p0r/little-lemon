@@ -1,3 +1,5 @@
+[![GitHub Clones](https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url=https://gist.githubusercontent.com/tOxicV4p0r/a428122d63e455b920242eeac1491a18/raw/clone.json&logo=github)](https://github.com/MShawon/github-clone-count-badge)
+
 ## **Little Lemon website**
 This project is part of the **Meta Front-End Developer Capstone** final project assessment and focuses solely on **reservation functionality**. The technologies I have used in this project are listed below
 
